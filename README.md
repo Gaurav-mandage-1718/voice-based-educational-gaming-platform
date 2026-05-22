@@ -47,7 +47,7 @@ A full-stack voice-based educational gaming platform built with **React**, **Spr
 ![User Dashboard](./screenshots/userdashboard-page.png)
 
 ### Game Page
-![Game Page](./screenshots/game-page.png)
+![Game Page](./screenshots/game-page-updated.png)
 
 ### Leaderboard Page
 ![Leaderboard Page](./screenshots/leaderboard-page.png)
