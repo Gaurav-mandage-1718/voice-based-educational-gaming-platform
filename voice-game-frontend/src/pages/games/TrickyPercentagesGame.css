@@ -1,0 +1,308 @@
+* {
+  box-sizing: border-box;
+}
+
+.percent-screen {
+  min-height: 100vh;
+  background: linear-gradient(rgba(94, 23, 82, 0.92), rgba(94, 23, 82, 0.95)),
+    #5a1d51;
+  color: #fff;
+  padding: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.percent-card-simple {
+  max-width: 500px;
+  margin: 80px auto;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.percent-topbar,
+.intro-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.percent-icon-btn {
+  width: 60px;
+  height: 56px;
+  border: none;
+  border-radius: 30%;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.percent-intro-card {
+  max-width: 700px;
+  margin: 0 auto;
+  border: 4px solid black;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+
+.percent-note-card {
+  position: relative;
+  max-width: 550px;
+  margin: 0 auto 26px;
+  background: #f4e8d8;
+  border-radius: 20px;
+  min-height: 130px;
+  overflow: hidden;
+}
+
+.percent-note-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 20px,
+    rgba(91, 138, 177, 0.18) 20px,
+    rgba(91, 138, 177, 0.18) 22px
+  );
+}
+
+.percent-note-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 36px;
+}
+
+.percent-problem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #2f3440;
+}
+
+.percent-value {
+  font-size: 70px;
+  font-weight: 800;
+}
+
+.percent-of {
+  font-size: 50px;
+  font-weight: 700;
+  color: #2b97c8;
+}
+
+.percent-number {
+  font-size: 74px;
+  font-weight: 800;
+}
+
+.percent-formula-box {
+  max-width: 540px;
+  margin: 0 auto 22px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.percent-formula-box p {
+  margin: 0 0 8px;
+  color: #e8cfe2;
+  font-size: 18px;
+}
+
+.percent-instruction {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.percent-intro-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.percent-intro-stats div {
+  flex: 1;
+}
+
+.percent-intro-stats span {
+  display: block;
+  color: #d6b5cc;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.percent-intro-stats strong {
+  font-size: 30px;
+}
+
+.percent-start-btn {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 12px;
+  background: #fff;
+  color: #5a1d51;
+  font-size: 28px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.percent-progress {
+  width: min(520px, 70vw);
+  background: rgba(31, 1, 26, 0.52);
+  border-radius: 18px;
+  padding: 14px 22px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.play-note {
+  margin-top: 40px;
+}
+
+.percent-answer-box {
+  width: 130px;
+  height: 85px;
+  margin: 0 auto 28px;
+  background: rgba(35, 4, 31, 0.85);
+  border-radius: 8px;
+  font-size: 56px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percent-keypad {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.percent-key {
+  min-height: 92px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 46px;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.percent-key-action,
+.percent-submit {
+  font-size: 28px;
+}
+
+.percent-submit {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.percent-voice-panel {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.percent-spoken-text {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .percent-how-title {
+    font-size: 42px;
+  }
+
+  .percent-note-content {
+    padding: 28px 20px;
+  }
+
+  .percent-value {
+    font-size: 52px;
+  }
+
+  .percent-of {
+    font-size: 36px;
+  }
+
+  .percent-number {
+    font-size: 54px;
+  }
+
+  .percent-formula-box strong {
+    font-size: 20px;
+  }
+
+  .percent-instruction {
+    font-size: 24px;
+  }
+
+  .percent-intro-stats {
+    flex-direction: column;
+  }
+
+  .percent-key {
+    min-height: 76px;
+    font-size: 34px;
+  }
+}
+.skills-box {
+  margin-bottom: 8px;
+}
+
+.skill-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.skill-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.skill-item h3 {
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+.skill-item p {
+  color: #d7c2d2;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.voice-panel {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  
+}

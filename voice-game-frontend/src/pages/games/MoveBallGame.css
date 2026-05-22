@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.move-screen {
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 22%),
+    linear-gradient(180deg, #245d74, #123240);
+  color: #fff;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.move-simple-card,
+.move-card {
+  width: min(100%, 760px);
+  margin: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 28px 24px;
+}
+
+.move-card h1,
+.move-card h2 {
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.move-back-btn,
+.move-start-btn,
+.move-secondary-btn,
+.move-voice-btn,
+.move-pause-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.move-back-btn {
+  min-width: 72px;
+  height: 48px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.move-start-btn {
+  width: min(100%, 420px);
+  min-height: 52px;
+  display: block;
+  margin: 18px auto 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #123240;
+  font-size: 20px;
+}
+
+.move-subtext,
+.move-description,
+.move-score {
+  text-align: center;
+}
+
+.move-preview-board {
+  width: 220px;
+  height: 220px;
+  margin: 20px auto;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.18);
+  position: relative;
+}
+
+.preview-ball,
+.preview-target {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.preview-ball {
+  background: #38bdf8;
+  left: 34px;
+  top: 120px;
+}
+
+.preview-target {
+  background: #facc15;
+  right: 34px;
+  top: 42px;
+}
+
+.move-stats {
+  display: flex;
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.move-stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.move-stats span {
+  display: block;
+  font-size: 14px;
+  color: #d3edf7;
+  margin-bottom: 6px;
+}
+
+.move-stats strong {
+  font-size: 24px;
+}
+
+.move-top-bar {
+  width: min(100%, 760px);
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.move-pause-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.move-progress-bar {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 18px;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+}
+
+.move-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.move-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 64px);
+  gap: 10px;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.move-cell {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.move-cell.ball {
+  background: #38bdf8;
+}
+
+.move-cell.target {
+  background: #facc15;
+}
+
+.move-voice-panel {
+  width: min(100%, 640px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.move-spoken-bubble {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.move-spoken-bubble span {
+  display: block;
+  font-size: 12px;
+  color: #d3edf7;
+  margin-bottom: 4px;
+}
+
+.move-spoken-bubble strong {
+  font-size: 22px;
+}
+
+.move-voice-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.move-voice-btn,
+.move-secondary-btn {
+  border-radius: 14px;
+  padding: 11px 18px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.move-voice-btn {
+  background: #14b8a6;
+}
+
+.move-voice-btn.active {
+  background: #ef4444;
+}
+
+.move-secondary-btn {
+  background: #f59e0b;
+}
+
+.move-feedback {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffe08a;
+}
+
+.move-error {
+  color: #ffd1d1;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    height: auto;
+  }
+
+  body {
+    overflow-y: auto;
+  }
+
+  .move-screen {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .move-stats,
+  .move-voice-actions {
+    flex-direction: column;
+  }
+
+  .move-grid {
+    grid-template-columns: repeat(5, 50px);
+    gap: 8px;
+  }
+
+  .move-cell {
+    width: 50px;
+    height: 50px;
+  }
+
+  .move-start-btn,
+  .move-secondary-btn,
+  .move-voice-btn {
+    width: 100%;
+  }
+}

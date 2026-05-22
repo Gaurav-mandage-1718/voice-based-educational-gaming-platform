@@ -1,0 +1,325 @@
+* {
+  box-sizing: border-box;
+}
+
+.odd-screen {
+  min-height: 100vh;
+  color: #fff;
+  padding: 18px;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(94, 23, 82, 0.95), rgba(64, 16, 56, 0.98)),
+    #5a1d51;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.odd-topbar {
+  max-width: 920px;
+  margin: 0 auto 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.odd-btn,
+.odd-start,
+.odd-voice-btn,
+.odd-option {
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease,
+    background 0.18s ease, border-color 0.18s ease;
+}
+
+.odd-btn:hover,
+.odd-start:hover,
+.odd-voice-btn:hover,
+.odd-option:hover {
+  transform: translateY(-1px);
+}
+
+.odd-btn {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.odd-progress {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  padding: 13px 18px;
+  background: rgba(17, 20, 43, 0.46);
+  backdrop-filter: blur(8px);
+  font-weight: 800;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.odd-card {
+  max-width: 920px;
+  margin: 0 auto;
+  border-radius: 28px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+}
+
+.odd-card.play {
+  max-width: 820px;
+}
+
+.odd-card h1,
+.odd-card h2 {
+  margin-top: 0;
+}
+
+.odd-kicker {
+  color: #fcd34d;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+  font-weight: 900;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.odd-note {
+  color: #fde68a;
+  margin-top: 10px;
+}
+
+.odd-stats {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.odd-stats div {
+  background: rgba(10, 14, 35, 0.36);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.odd-stats span {
+  display: block;
+  color: #cbd5e1;
+  font-size: 12px;
+  margin-bottom: 5px;
+  letter-spacing: 0.06em;
+}
+
+.odd-stats strong {
+  font-size: 24px;
+}
+
+.odd-start {
+  width: 100%;
+  border-radius: 999px;
+  padding: 15px;
+  color: #fff;
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+  font-size: 20px;
+  box-shadow: 0 16px 30px rgba(249, 115, 22, 0.28);
+}
+
+.odd-start:hover {
+  box-shadow: 0 20px 36px rgba(249, 115, 22, 0.34);
+}
+
+.odd-voice {
+  text-align: center;
+  margin: 18px 0 14px;
+  background: rgba(8, 12, 30, 0.36);
+  border-radius: 18px;
+  padding: 14px 16px;
+  backdrop-filter: blur(8px);
+}
+
+.odd-voice span {
+  display: block;
+  color: #cbd5e1;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.odd-voice strong {
+  font-size: clamp(22px, 4vw, 30px);
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+.odd-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.odd-voice-btn {
+  color: #fff;
+  border-radius: 14px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #06b6d4, #14b8a6);
+  box-shadow: 0 14px 28px rgba(20, 184, 166, 0.2);
+}
+
+.odd-voice-btn.active {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  box-shadow: 0 14px 28px rgba(239, 68, 68, 0.22);
+}
+
+.odd-voice-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.odd-feedback {
+  text-align: center;
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 900;
+  margin: 8px 0 10px;
+}
+
+.odd-feedback.good {
+  color: #86efac;
+}
+
+.odd-feedback.warn {
+  color: #fcd34d;
+}
+
+.odd-error {
+  text-align: center;
+  color: #fecaca;
+  margin-bottom: 10px;
+}
+
+.odd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.odd-option {
+  min-height: 82px;
+  border-radius: 18px;
+  color: #fff;
+  font-size: clamp(20px, 2.6vw, 24px);
+  background: rgba(15, 23, 42, 0.64);
+  border: 2px solid transparent;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+  padding: 14px;
+}
+
+.odd-option:hover {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.odd-option.selected {
+  border-color: #fbbf24;
+  background: rgba(91, 33, 182, 0.32);
+}
+
+.odd-review {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.odd-back {
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.odd-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+
+.odd-pills span {
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font-weight: 800;
+}
+
+.odd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.odd-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: rgba(7, 12, 28, 0.4);
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.odd-row p {
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.odd-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.odd-mark.ok {
+  background: #22c55e;
+}
+
+@media (max-width: 768px) {
+  .odd-screen {
+    padding: 14px;
+  }
+
+  .odd-card {
+    padding: 20px 16px;
+    border-radius: 22px;
+  }
+
+  .odd-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .odd-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .odd-option {
+    min-height: 74px;
+  }
+
+  .odd-progress {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+}

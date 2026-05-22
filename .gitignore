@@ -1,0 +1,27 @@
+# Frontend
+voice-game-frontend/node_modules/
+voice-game-frontend/dist/
+voice-game-frontend/build/
+voice-game-frontend/.env
+voice-game-frontend/.env.*
+
+# Backend
+VoiceGameApplication/target/
+VoiceGameApplication/src/main/resources/application.properties
+
+# STS / Eclipse
+VoiceGameApplication/.classpath
+VoiceGameApplication/.project
+VoiceGameApplication/.settings/
+
+# VS Code / IntelliJ
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

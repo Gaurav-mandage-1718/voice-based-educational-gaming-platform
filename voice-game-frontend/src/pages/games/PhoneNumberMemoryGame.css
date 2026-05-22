@@ -1,0 +1,630 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.phone-screen {
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(94, 23, 82, 0.9), rgba(94, 23, 82, 0.92)),
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 25%),
+    #5a1d51;
+  color: #fff;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.phone-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.04)),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 18%,
+      rgba(0, 0, 0, 0.08) 18%,
+      rgba(0, 0, 0, 0.08) 20%,
+      transparent 20%
+    );
+  pointer-events: none;
+}
+
+.phone-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(transparent 0%, rgba(0, 0, 0, 0.08) 100%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) 80px,
+      transparent 80px,
+      transparent 160px
+    );
+  pointer-events: none;
+}
+
+.phone-card-simple {
+  width: min(92vw, 520px);
+  margin: auto;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.top-icons,
+.top-game-bar {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.top-icons {
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.top-game-bar {
+  justify-content: center;
+  gap: 12px;
+}
+
+.circle-btn {
+  min-width: 72px;
+  height: 52px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.circle-btn.small {
+  width: 52px;
+  min-width: 52px;
+  height: 52px;
+  padding: 0;
+  font-size: 18px;
+}
+
+.hint-btn {
+  opacity: 0.9;
+}
+
+.intro-screen {
+  position: relative;
+}
+
+.intro-card {
+  width: min(100%, 780px);
+  max-height: calc(100vh - 88px);
+  margin: auto;
+  padding: 20px 24px;
+  border-radius: 28px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(8, 112, 126, 0.35);
+  border: 3px solid rgba(255, 255, 255, 0.12);
+}
+
+.phone-intro-card {
+  align-items: center;
+  text-align: center;
+}
+
+.phone-card-preview {
+  width: min(100%, 520px);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #2ec3da, #1eb8d4);
+  padding: 26px 20px 30px;
+  margin-bottom: 8px;
+  color: #eaffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+}
+
+.phone-card-preview::after,
+.memory-card-glow {
+  content: "";
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  left: 42%;
+  width: 18%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.03)
+  );
+  transform: rotate(-18deg);
+}
+
+.phone-avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: rgba(4, 120, 133, 0.24);
+  position: relative;
+}
+
+.phone-avatar::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(4, 120, 133, 0.26);
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phone-avatar::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 24px;
+  border-radius: 50% 50% 40% 40%;
+  background: rgba(4, 120, 133, 0.26);
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phone-name,
+.memory-name {
+  margin: 0 0 4px;
+  font-size: clamp(24px, 2.4vw, 40px);
+  font-weight: 700;
+  color: rgba(13, 89, 99, 0.92);
+}
+
+.phone-role,
+.memory-role {
+  margin: 0 0 22px;
+  font-size: clamp(14px, 1.4vw, 22px);
+  color: rgba(13, 89, 99, 0.74);
+}
+
+.phone-number-preview,
+.memory-number {
+  font-size: clamp(46px, 6vw, 84px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  line-height: 1;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.section-label {
+  color: #cdeef2;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
+}
+
+.game-title {
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1;
+  margin: 0 0 10px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.info-box {
+  flex: 1;
+}
+
+.info-label {
+  display: block;
+  color: #cdeef2;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.info-box strong {
+  font-size: 24px;
+}
+
+.skills-box {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.skill-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.skill-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.skill-item h3 {
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+.skill-item p {
+  color: #d7f5f8;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.start-btn {
+  width: min(100%, 500px);
+  min-height: 52px;
+  margin: 8px auto 0;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: #fff;
+  color: #0b6570;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.play-screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.progress-bar {
+  flex: 1;
+  min-width: 0;
+  max-width: 660px;
+  width: 100%;
+  background: rgba(1, 48, 56, 0.72);
+  border-radius: 999px;
+  padding: 12px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.memory-stage {
+  width: min(100%, 920px);
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.memory-instruction {
+  font-size: clamp(22px, 2.6vw, 46px);
+  font-weight: 800;
+  text-align: center;
+  max-width: 740px;
+}
+
+.memory-card {
+  width: min(100%, 700px);
+  min-height: 280px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #2ec3da, #1eb8d4);
+  padding: 28px 22px 36px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.2);
+}
+
+.memory-card .phone-avatar {
+  margin-bottom: 12px;
+}
+
+.memory-number {
+  margin-top: 12px;
+}
+
+.voice-panel {
+  width: min(100%, 760px);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.spoken-bubble {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+}
+
+.spoken-bubble span {
+  display: block;
+  color: #d3f1f4;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.spoken-bubble strong {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.voice-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.voice-btn,
+.retry-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 11px 18px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.voice-btn {
+  background: #14b8a6;
+}
+
+.voice-btn.active {
+  background: #ef4444;
+}
+
+.voice-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.retry-btn {
+  background: #f59e0b;
+}
+
+.feedback-text {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.feedback-text.good {
+  color: #7df99a;
+}
+
+.feedback-text.warn {
+  color: #ffd166;
+}
+
+.voice-error {
+  color: #ffd1d1;
+  font-size: 13px;
+}
+
+.review-screen {
+  width: min(100%, 820px);
+  margin: 0 auto;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.review-header h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.back-text-btn {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.review-summary {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.summary-pill {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+}
+
+.review-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.review-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.review-status {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.review-status.ok {
+  background: #4ade40;
+  color: #fff;
+}
+
+.review-status.bad {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+.review-question {
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+
+.review-answer-line {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.correct-answer {
+  color: #fff;
+}
+
+.wrong-answer {
+  color: #ff8f8f;
+}
+
+.review-btn {
+  margin-top: 12px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    height: auto;
+  }
+
+  body {
+    overflow-y: auto;
+  }
+
+  .phone-screen {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    padding: 12px;
+  }
+
+  .intro-card {
+    max-height: none;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .top-game-bar {
+    gap: 10px;
+  }
+
+  .progress-bar {
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  .memory-card {
+    min-height: 240px;
+  }
+
+  .review-screen {
+    overflow: visible;
+  }
+
+  .review-list {
+    overflow: visible;
+  }
+}
